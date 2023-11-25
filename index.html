@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MD</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="images (4).png">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        @font-face {
+            font-family: me;
+            src: url('ElMessiri-VariableFont_wght.ttf');
+        }
+        
+
+        body{
+            background-image: url("pexels-ebedddddyyyyyyyyyyyyyyyyyyyyyer-1624496.jpg");
+            
+        }
+        .task{
+            border-radius: 20px;
+            display: flex;
+            background-color: white;
+            padding: 4px;
+            margin-bottom: 7px;
+            border-bottom: solid black 1px;
+            transition: 0.5s;
+            font-family: me;
+        }
+        .task:hover{
+            box-shadow: 0px 1px 10px black;
+        }
+        .table-task{
+
+            background-color: rgba(214, 199, 170, 0.897);
+            width: 60%;
+           border-radius: 20px;
+            margin-top: 130px;
+        }
+        button{
+            border: none;
+            font-size: 20px;
+           
+            font-family: me;
+            
+        }
+      
+        button.ceer{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding-top: 8px;
+            transition: 1s;
+         
+            
+        }
+        button.ceer:hover{
+            transform:rotate(360deg);
+            box-shadow: 0px 3px 5px gray;
+        }
+        .done{
+            
+            background-color: rgb(127, 207, 120);
+        }
+
+    </style>
+</head>
+
+<body>
+    
+<div style="direction: rtl;">
+    <!--- center-->
+    <div style="display: flex; justify-content: center; align-items: center;">
+         <!--- tack table-->
+        <div class="table-task">
+                <!---head-->
+                <div style="width: 100%; text-align: center; background-color: rgb(119, 86, 47); padding-top: 8px; padding-bottom: 8px; border-radius: 20px 20px 0px 0px;">
+                    <h1 style="display: inline; color: white; font-family: me;">T A S K S</h1>
+                    <button id="addb" class="ceer" style="float: right;"><img src="add.png" alt=""></button>
+                </div>
+                <!---head-->
+                <!---taskss-->
+                <div id="tasks" style="padding: 20px;">
+
+                        <!---task-->
+                        <div class="task">
+                                <!---taskinfo-->
+                                <div style="width: 70%;">
+                                    <h2 >انجز في جافا سكربت</h2>
+                                    <div>
+                                        <span>
+                                            10/10/2010
+                                        </span>
+                                    </div>
+                                </div>
+                                <!---taskinfo-->
+
+                                <!---taskactions-->
+                                <div style="width: 25%; display: flex; justify-content: space-around; align-items: center; color: ">
+                                    <button style="background-color: rgb(148, 33, 33);" class="ceer"><img style="color: white;" src="dddd.png" alt=""></button>
+                                    <button  style="background-color: white;" class="ceer"><img src="eee.png" alt=""></button>
+                                    <button style="background-color: green;" class="ceer"><img src="ch.png" alt=""></button>
+                                </div>
+                                <!---taskaction-->
+                        </div>
+                        <!---task-->
+
+                        <!---task-->
+                        <div class="task">
+                            <!---taskinfo-->
+                            <div style="width: 70%;">
+                                <h2>انجز في جافا سكربت</h2>
+                                <div>
+                                    <span>
+                                        10/10/2010
+                                    </span>
+                                </div>
+                            </div>
+                            <!---taskinfo-->
+
+                            <!---taskactions-->
+                            <div style="width: 25%; display: flex; justify-content: space-around; align-items: center;">
+                                <button style="background-color: red;" class="ceer"><img  src="dddd.png" alt=""></button>
+                                <button  style="background-color: white;" class="ceer"><img src="eee.png" alt=""></button>
+                                <button style="background-color: green;" class="ceer"><img src="ch.png" alt=""></button>
+                            </div>
+                            <!---taskaction-->
+                    </div>
+                    <!---task-->
+
+                    <!---task-->
+                    <div class="task">
+                        <!---taskinfo-->
+                        <div style="width: 70%;">
+                            <h2 style="margin-left: 5px;">انجز في جافا سكربت</h2>
+                            <div>
+                                <span>
+                                    10/10/2010
+                                </span>
+                            </div>
+                        </div>
+                        <!---taskinfo-->
+
+                        <!---taskactions-->
+                        <div style="width: 25%; display: flex; justify-content: space-around; align-items: center;">
+                            <button style="background-color: red;" class="ceer"><img src="dddd.png" alt=""></button>
+                            <button  style="background-color: white;" class="ceer"><img src="eee.png" alt=""></button>
+                            <button style="background-color: green;" class="ceer"><img src="ch.png" alt=""></button>
+                        </div>
+                        <!---taskaction-->
+                </div>
+                <!---task-->
+                </div>
+                <!---taskss-->
+        </div>
+        <!--- //tack table-->
+    </div>
+   <!---// center-->
+</div>
+
+                   
+</body>
+
+
+
+
+
+
+
+
+
+<script>
+   
+
+    let tasks = [
+        {
+            "title": "null",
+            "data": "10/10/2018",
+            "conmf": false
+        },
+        {
+            "title": "null",
+            "data": "10/10/2018",
+            "conmf": false
+        },
+        {
+            "title": "null",
+            "data": "10/10/2018",
+            "conmf": false
+        }
+    ]
+  
+    function getask(){
+
+        let rel = JSON.parse( localStorage.getItem("tasks"))
+        tasks = rel ?? []
+    }
+        
+    getask()
+
+
+         
+         function run1(){
+            document.getElementById("tasks").innerHTML = ""
+
+            let index = 0
+
+          for(task of tasks){
+
+            let content =               `     <div class="task ${task.conmf? "done" : ""}">
+                                                    <!---taskinfo-->
+                                                    <div style="width: 70%;">
+                                                        <h2>${task.title}</h2>
+                                                        <div>
+                                                            <span>
+                                                                ${task.data}
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <!---taskinfo-->
+
+                                                    <!---taskactions-->
+                                                    <div style="width: 25%; display: flex; justify-content: space-around; align-items: center;">
+                                                        <button onclick="delett(${index})" style="background-color: rgb(184, 33, 33);" class="ceer"><img src="dddd.png" alt=""></button>
+                                                        <button onclick="edit(${index})" style="background-color: white;" class="ceer"><img src="eee.png" alt=""></button>
+                                                        ${task.conmf? 
+                                                                                            ` <button onclick="toggl(${index})" style="background-color: red;" class="ceer"><img src="add.png" alt=""></button>
+                                                                                    </div>` :
+                                                                                    
+                                                    
+                                                    
+                                                    
+                                                                                    ` <button onclick="toggl(${index})" style="background-color: green;" class="ceer"><img src="ch.png" alt=""></button>
+                                                                                    </div>`}
+                                                       
+                                                    <!---taskaction-->
+                                            </div>  
+                                        `
+                                              
+                                            document.getElementById("tasks").innerHTML += content 
+                                            index++
+                                        }  
+                                    }
+
+    run1()
+              
+    
+
+      document.getElementById("addb").addEventListener("click",function(){
+        let now = new Date
+       let data = now.getDate() +"/"+ now.getMonth() +"/"+ now.getFullYear()
+        let name = prompt("enter new task")
+      
+       let taskj = {
+            "title": name,
+            "data": data,
+            "conmf": false
+       }
+       tasks.push(taskj)
+
+       storg()
+       run1()
+
+      })
+
+       
+      function delett(index){
+            let tack = tasks[index]
+            let x = confirm("aru sure u want to delet "+tack.title)
+            if(x){
+                tasks.splice(index,1)
+                storg()
+                run1()
+            }
+              
+      }
+
+
+function edit(index){
+
+     let tack = tasks[index]
+     let newname =  prompt("enter new name",tack.title)
+   
+     tack.title = newname
+     storg()
+     run1()
+
+
+}
+
+     function toggl(index){
+        let tack = tasks[index]
+        tack.conmf = !tack.conmf
+        storg()
+        run1()
+
+
+
+     }  
+         
+         
+
+
+         //============================fun
+         function storg(){
+
+            let str = JSON.stringify(tasks)
+       
+       localStorage.setItem("tasks",str)
+
+         }
+</script>
+</html>
